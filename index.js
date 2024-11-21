@@ -1,11 +1,18 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { validateInput, processData, validateFile } from './utils.js';
 
 dotenv.config();
 const app = express();
 app.use(bodyParser.json());
+
+const corsOptions = {
+    origin: 'https://bfhl-frontend-pi-drab.vercel.app/',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  };
 
 const PORT = process.env.PORT || 3001;
 
