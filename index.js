@@ -37,7 +37,7 @@ app.post('/bfhl', (req, res) => {
         let fileValidation = { file_valid: false };  // Default: No file valid
 
         if (file_b64) {
-            // Validate file if file is provided
+            // If file is provided, validate it
             fileValidation = validateFile(file_b64);
         }
 
