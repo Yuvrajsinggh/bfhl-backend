@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 // Fix: Apply the `cors` middleware with the correct CORS options
 const corsOptions = {
-    origin: 'https://bfhl-frontend-pi-drab.vercel.app',  // Update with your frontend URL
+    origin: 'https://bfhl-frontend-eight-wine.vercel.app/',  // Update with your frontend URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 };
