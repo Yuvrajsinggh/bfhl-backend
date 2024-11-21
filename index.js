@@ -1,18 +1,22 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import cors from 'cors';
+import cors from 'cors';  // Fix: Import the actual `cors` middleware
 import { validateInput, processData, validateFile } from './utils.js';
 
 dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
+// Fix: Apply the `cors` middleware with the correct CORS options
 const corsOptions = {
-    origin: 'https://bfhl-frontend-pi-drab.vercel.app/',
+    origin: 'https://bfhl-frontend-pi-drab.vercel.app',  // Update with your frontend URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
-  };
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3001;
 
